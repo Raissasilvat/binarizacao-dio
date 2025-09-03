@@ -5,7 +5,6 @@ def converter_para_cinza_numpy(imagem):
     """
     Converte uma imagem colorida para tons de cinza usando NumPy.
     """
-    # Carregar a imagem usando PIL
     img = Image.open(imagem).convert('RGB')
     img_array = np.array(img)
 
@@ -49,10 +48,7 @@ def otsu_threshold(img_gray):
     return best_t
 
 
-# ------------------------------
-# Exemplo de uso
-# ------------------------------
-imagem = "lena.jpg"   # coloque o nome/caminho da sua imagem aqui
+imagem = "lena.jpg"   
 
 # 1) Converter para cinza
 img_cinza = converter_para_cinza_numpy(imagem)
@@ -70,4 +66,5 @@ Image.fromarray(img_binaria_otsu).save("lena_binaria_otsu.jpg")
 print(f"✔ Imagem em tons de cinza salva como lena_cinza.jpg")
 print(f"✔ Imagem binária (fixa, T=128) salva como lena_binaria_fixa.jpg")
 print(f"✔ Imagem binária (Otsu, T={limiar_otsu}) salva como lena_binaria_otsu.jpg")
+
 
